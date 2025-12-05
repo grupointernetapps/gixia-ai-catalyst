@@ -46,14 +46,14 @@ const comparisons = [
 
 const Comparison = () => {
   return (
-    <section className="py-24 relative bg-gradient-to-b from-background via-secondary/10 to-background">
+    <section className="section-padding bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             La Diferencia es Clara
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6 text-foreground">
             <span className="text-muted-foreground">Sin IA</span> vs{" "}
             <span className="gradient-text">Con IA de GIXIA</span>
           </h2>
@@ -64,10 +64,10 @@ const Comparison = () => {
 
         {/* Comparison Table */}
         <div className="max-w-4xl mx-auto">
-          <div className="glass-card rounded-2xl overflow-hidden border border-border/50">
+          <div className="bg-card rounded-2xl overflow-hidden border border-border card-shadow">
             {/* Header */}
-            <div className="grid grid-cols-3 bg-secondary/50 p-4 border-b border-border/50">
-              <div className="font-semibold text-sm">Aspecto</div>
+            <div className="grid grid-cols-3 bg-secondary p-4 border-b border-border">
+              <div className="font-semibold text-sm text-foreground">Aspecto</div>
               <div className="font-semibold text-sm text-center text-destructive">Sin IA</div>
               <div className="font-semibold text-sm text-center text-primary">Con IA</div>
             </div>
@@ -77,17 +77,17 @@ const Comparison = () => {
               <div
                 key={index}
                 className={`grid grid-cols-3 p-4 items-center ${
-                  index !== comparisons.length - 1 ? "border-b border-border/30" : ""
-                } hover:bg-secondary/20 transition-colors`}
+                  index !== comparisons.length - 1 ? "border-b border-border" : ""
+                } hover:bg-secondary/50 transition-colors`}
               >
-                <div className="font-medium text-sm">{item.aspect}</div>
+                <div className="font-medium text-sm text-foreground">{item.aspect}</div>
                 <div className="flex items-center justify-center gap-2 text-center">
                   <X className="w-4 h-4 text-destructive shrink-0" />
                   <span className="text-sm text-muted-foreground">{item.withoutAI}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-center">
                   <Check className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground">{item.withAI}</span>
+                  <span className="text-sm text-foreground font-medium">{item.withAI}</span>
                 </div>
               </div>
             ))}

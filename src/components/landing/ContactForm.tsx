@@ -28,7 +28,6 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -57,7 +56,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contacto" className="py-24 relative">
+    <section id="contacto" className="section-padding">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -66,7 +65,7 @@ const ContactForm = () => {
               <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
                 Contáctanos
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-foreground">
                 Comienza tu <span className="gradient-text">transformación digital</span> hoy
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
@@ -90,8 +89,8 @@ const ContactForm = () => {
               </div>
 
               {/* Contact Info */}
-              <div className="glass-card rounded-xl p-6 border border-border/50">
-                <h3 className="font-semibold mb-4">Información de contacto</h3>
+              <div className="bg-secondary/50 rounded-xl p-6 border border-border">
+                <h3 className="font-semibold mb-4 text-foreground">Información de contacto</h3>
                 <div className="space-y-3 text-sm">
                   <p className="text-muted-foreground">
                     📍 Santo Domingo, República Dominicana
@@ -110,12 +109,12 @@ const ContactForm = () => {
             </div>
 
             {/* Right Side - Form */}
-            <div className="glass-card rounded-2xl p-8 border border-border/50">
+            <div className="bg-card rounded-2xl p-8 border border-border card-shadow">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name & Company */}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-foreground">
                       Nombre completo *
                     </label>
                     <div className="relative">
@@ -126,13 +125,13 @@ const ContactForm = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-foreground"
                         placeholder="Tu nombre"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-foreground">
                       Empresa *
                     </label>
                     <div className="relative">
@@ -143,7 +142,7 @@ const ContactForm = () => {
                         value={formData.company}
                         onChange={handleChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-foreground"
                         placeholder="Nombre de tu empresa"
                       />
                     </div>
@@ -153,7 +152,7 @@ const ContactForm = () => {
                 {/* Email & Phone */}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-foreground">
                       Email *
                     </label>
                     <div className="relative">
@@ -164,13 +163,13 @@ const ContactForm = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-foreground"
                         placeholder="tu@email.com"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-foreground">
                       Teléfono / WhatsApp
                     </label>
                     <div className="relative">
@@ -180,7 +179,7 @@ const ContactForm = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-foreground"
                         placeholder="+1 (809) 000-0000"
                       />
                     </div>
@@ -189,7 +188,7 @@ const ContactForm = () => {
 
                 {/* Service */}
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-foreground">
                     Servicio de interés *
                   </label>
                   <select
@@ -197,7 +196,7 @@ const ContactForm = () => {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors appearance-none"
+                    className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none text-foreground"
                   >
                     <option value="">Selecciona un servicio</option>
                     {services.map((service) => (
@@ -210,7 +209,7 @@ const ContactForm = () => {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-foreground">
                     Cuéntanos sobre tu proyecto
                   </label>
                   <div className="relative">
@@ -220,7 +219,7 @@ const ContactForm = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                      className="w-full pl-10 pr-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none text-foreground"
                       placeholder="Describe brevemente qué necesitas automatizar o mejorar..."
                     />
                   </div>

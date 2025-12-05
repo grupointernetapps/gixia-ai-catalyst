@@ -41,14 +41,14 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="servicios" className="py-24 relative">
+    <section id="servicios" className="section-padding">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             Servicios Principales
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6 text-foreground">
             Soluciones de <span className="gradient-text">IA empresarial</span>
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -62,17 +62,17 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-card to-card/50 rounded-2xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+              className="group relative bg-card rounded-2xl p-8 border border-border card-shadow card-hover overflow-hidden"
             >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/25">
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <service.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
 
-                <h3 className="text-xl font-bold font-display mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold font-display mb-3 text-foreground group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
 
@@ -84,7 +84,7 @@ const Services = () => {
                   {service.features.map((feature, featureIndex) => (
                     <span
                       key={featureIndex}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-foreground"
                     >
                       {feature}
                     </span>
