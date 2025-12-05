@@ -41,16 +41,14 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section id="beneficios" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="beneficios" className="section-padding bg-secondary/30">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             Beneficios Clave
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6 text-foreground">
             Resultados <span className="gradient-text">medibles</span> para tu negocio
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -63,17 +61,17 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group glass-card p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10"
+              className="group bg-card p-8 rounded-2xl border border-border card-shadow card-hover"
             >
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <benefit.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs font-bold text-accent uppercase tracking-wider">
+                  <span className="text-xs font-bold text-primary uppercase tracking-wider">
                     {benefit.metric}
                   </span>
-                  <h3 className="text-xl font-bold font-display mt-1 mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold font-display mt-1 mb-2 text-foreground group-hover:text-primary transition-colors">
                     {benefit.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">

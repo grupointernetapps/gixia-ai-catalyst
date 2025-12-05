@@ -39,14 +39,14 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section className="py-24 relative">
+    <section className="section-padding">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             Casos de Éxito
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6 text-foreground">
             Resultados <span className="gradient-text">reales</span> de nuestros clientes
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -59,7 +59,7 @@ const UseCases = () => {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl p-8 md:p-10 border border-border/50 hover:border-primary/30 transition-all duration-500"
+              className="bg-card rounded-2xl p-8 md:p-10 border border-border card-shadow card-hover"
             >
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Company Info */}
@@ -67,10 +67,10 @@ const UseCases = () => {
                   <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary mb-4">
                     {useCase.industry}
                   </span>
-                  <h3 className="text-2xl font-bold font-display mb-4">{useCase.company}</h3>
+                  <h3 className="text-2xl font-bold font-display mb-4 text-foreground">{useCase.company}</h3>
                   <div className="space-y-4">
                     <div>
-                      <span className="text-sm font-semibold text-accent">Desafío:</span>
+                      <span className="text-sm font-semibold text-destructive">Desafío:</span>
                       <p className="text-muted-foreground text-sm mt-1">{useCase.challenge}</p>
                     </div>
                     <div>
@@ -89,10 +89,10 @@ const UseCases = () => {
                     {useCase.results.map((result, resultIndex) => (
                       <div
                         key={resultIndex}
-                        className="bg-secondary/50 rounded-xl p-5 border border-border/50"
+                        className="bg-secondary/50 rounded-xl p-5 border border-border"
                       >
                         <CheckCircle className="w-5 h-5 text-primary mb-3" />
-                        <p className="text-sm font-medium">{result}</p>
+                        <p className="text-sm font-medium text-foreground">{result}</p>
                       </div>
                     ))}
                   </div>

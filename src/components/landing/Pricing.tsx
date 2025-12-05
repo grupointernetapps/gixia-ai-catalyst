@@ -62,14 +62,14 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="precios" className="py-24 relative">
+    <section id="precios" className="section-padding">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
             Planes y Precios
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-6 text-foreground">
             Inversión que <span className="gradient-text">se paga sola</span>
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -82,16 +82,16 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-2xl p-8 border transition-all duration-500 ${
+              className={`relative rounded-2xl p-8 transition-all duration-500 ${
                 plan.popular
-                  ? "bg-gradient-to-b from-primary/10 to-card border-primary shadow-xl shadow-primary/10 scale-105 lg:scale-110"
-                  : "bg-card border-border/50 hover:border-primary/30"
+                  ? "bg-primary text-primary-foreground scale-105 lg:scale-110 shadow-xl"
+                  : "bg-card border border-border card-shadow card-hover"
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1 px-4 py-1 bg-gradient-to-r from-primary to-cyan-400 rounded-full text-primary-foreground text-sm font-semibold">
+                  <div className="flex items-center gap-1 px-4 py-1 bg-background rounded-full text-primary text-sm font-semibold shadow-lg">
                     <Sparkles className="w-4 h-4" />
                     Más Popular
                   </div>
@@ -99,14 +99,22 @@ const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold font-display mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
+                <h3 className={`text-2xl font-bold font-display mb-2 ${plan.popular ? "text-primary-foreground" : "text-foreground"}`}>
+                  {plan.name}
+                </h3>
+                <p className={`text-sm mb-6 ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  {plan.description}
+                </p>
                 <div className="flex items-baseline justify-center gap-1">
                   {plan.price !== "Personalizado" && (
-                    <span className="text-2xl text-muted-foreground">US$</span>
+                    <span className={`text-2xl ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>US$</span>
                   )}
-                  <span className="text-5xl font-bold font-display gradient-text">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+                  <span className={`text-5xl font-bold font-display ${plan.popular ? "text-primary-foreground" : "gradient-text"}`}>
+                    {plan.price}
+                  </span>
+                  <span className={plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}>
+                    {plan.period}
+                  </span>
                 </div>
               </div>
 
@@ -114,16 +122,18 @@ const Pricing = () => {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                    <Check className={`w-5 h-5 shrink-0 mt-0.5 ${plan.popular ? "text-primary-foreground" : "text-primary"}`} />
+                    <span className={`text-sm ${plan.popular ? "text-primary-foreground/90" : "text-muted-foreground"}`}>
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
               <Button
-                variant={plan.popular ? "hero" : "outline"}
-                className="w-full"
+                variant={plan.popular ? "secondary" : "hero"}
+                className={`w-full ${plan.popular ? "bg-background text-primary hover:bg-background/90" : ""}`}
                 size="lg"
               >
                 {plan.cta}
